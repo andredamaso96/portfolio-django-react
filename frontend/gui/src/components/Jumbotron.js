@@ -3,9 +3,10 @@ import Typed from 'react-typed'
 import ReactRoundedImage from "react-rounded-image";
 import MyPhoto from "../images/foto_perfil.jpg";
 
-export class Jumbotron extends Component {
-    render() {
-        return (
+// export class Jumbotron extends Component {
+//     render() {
+//         return (
+const Jumbotron = () =>(
             <div className="jumbotron" id="home">
                 <div className="container">
 
@@ -28,7 +29,7 @@ export class Jumbotron extends Component {
                 </div>
             </div>
         )
-    }
-}
+//     }
+// }
 
 export default Jumbotron

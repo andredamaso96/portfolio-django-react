@@ -91,6 +91,11 @@ export class About extends Component {
 
                                 <img src={MyPhoto} alt="Avatar" ></img>
                                 <p>Setúbal, Portugal</p>
+                                <div className="download">
+                                  <p>
+                                    <a href="#" className="button"><i className="fa fa-download"></i>Download Resume</a>
+                                  </p>
+                                </div>
                                     <p className="lead">
                                     Self-taught and enthusiast learner, from the moment I produced “Hello World” in the console of my first application, I knew I was hooked into the world of software development. But software development has never been “just a job” for me, it’s offered an engaging challenge to continually learn and improve my skills by creating software. What started with a simple “Hello World” has become a full-fledged passion that only gets more exciting as the time go by.
                                     </p>

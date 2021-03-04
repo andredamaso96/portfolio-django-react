@@ -29,6 +29,7 @@ footer, .contact, #project, .jumbotron, h1, h2, h3, h4, p, a {
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
+  border-radius: 0px;
   
 }
 
@@ -139,16 +140,18 @@ footer, .contact, #project, .jumbotron, h1, h2, h3, h4, p, a {
   font-size: 1.2rem;
   transition: color 0.1s, background-color 0.1s;
   color: white;
-  /* font-weight: bold; */
   text-transform: uppercase;
+  cursor: pointer;
 }
 
 .navbar a:hover {
-  color: #4dd0e1;
+  color: #4dd0e1 !important;
+  /* cursor: pointer; */
 }
 
 .navbar a:focus, a:active {
   color: #00bcd4;
+  
 }
 
 .navbar a::before {
@@ -183,12 +186,13 @@ a:focus::before {
 
  /* About ---------------- */
 
- .title-box-2 {
+.title-box-2 {
   margin-bottom: 3rem;
+  text-transform: uppercase;
 }
 
 .title-left {
-  font-size: 2rem;
+  font-size: 1.5rem;
   position: relative;
 }
 
@@ -199,10 +203,6 @@ a:focus::before {
   background-color: #00bcd4;
   width: 100px;
   bottom: -12px;
-}
-
-.title-box-2 {
-  text-transform: uppercase;
 }
 
 
@@ -250,7 +250,35 @@ a:focus::before {
 
 #about .col-md-6{
   padding: 40px !important;
-} 
+}
+
+#about .download {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+#about .download .button {
+  /* margin-top: 6px; */
+  margin-top: 10px;
+  background: #444;
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  
+}
+
+#about .download .button:hover {
+  /* background: #fff; */
+  background: #00444d;
+  /* color: #00bcd4; */
+  text-decoration: none;
+}
+#about .download .button i {
+  margin-right: 15px;
+  font-size: 20px;
+}
+
 
 /* Skils ---------------------------------- */
 
@@ -264,4 +292,89 @@ a:focus::before {
 .skill-mf .progress .progress-bar {
   height: .7rem;
   background-color: #00bcd4;
+}
+
+
+/* Experience --------------------------- */
+
+#experience{
+  padding: 20px;
+}
+
+
+/* Education --------------------------- */
+
+#education{
+  padding: 20px;
+}
+
+
+/* Projects --------------------------- */
+
+#projects{
+  padding: 20px;
+}
+
+.text-center {
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.text-center:before {
+  content: '';
+  position: absolute;
+  height: 3px;
+  background-color: #00bcd4;
+  width: 100px;
+  bottom: -12px;
+}
+
+.card {
+  background: white !important;
+  /* width: 24em; */
+  border-radius: 0.6em;
+  margin: 1em;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 13px 27px -5px hsla(240, 30.1%, 28%, 0.25), 0 8px 16px -8px hsla(0, 0%, 0%, 0.3), 0 -6px 16px -6px hsla(0, 0%, 0%, 0.03);
+  transition: all ease 200ms;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 13px 40px -5px hsla(240, 30.1%, 28%, 0.12), 0 8px 32px -8px hsla(0, 0%, 0%, 0.14), 0 -6px 32px -6px hsla(0, 0%, 0%, 0.02);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+}
+
+.card h2 {
+  margin-top: -0.2em;
+  line-height: 1.4;
+  font-size: 1.3em;
+  font-weight: 500;
+  transition: all ease-in 100ms;
+}
+
+
+.card h5 {
+  font-weight: 700;
+  font-size: 0.7em;
+  letter-spacing: 0.04em;
+  margin: 1.4em 0 0 0;
+  text-transform: uppercase;
+}
+
+.card-body {
+  padding: 1.2em;
+}
+
+.card a {
+  color: grey;
+}
+
+.card a:hover{
+  text-decoration: none;
 }
