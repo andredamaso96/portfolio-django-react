@@ -1,6 +1,9 @@
 from django.contrib import admin
 
 # Register your models here.
-from .models import About
+from .models import About, Skills
 
-admin.site.register(About)
+myModels = [About, Skills]  # iterable list
+admin.site.register(myModels)
+
+#admin.site.register(About)

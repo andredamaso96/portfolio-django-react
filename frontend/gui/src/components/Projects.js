@@ -39,7 +39,7 @@ export default class Project extends Component {
                     <div className="container">
 
                         <div className="title-box-2">
-                            <h5 className="text-center" id="portfolio-title">
+                            <h5 className="text-center projects-title" id="portfolio-title">
                             Projects</h5>
                         </div>
 

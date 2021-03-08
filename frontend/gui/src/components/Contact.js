@@ -5,8 +5,8 @@ import { AiFillGithub, AiFillLinkedin } from "react-icons/ai"
 
 
 const Style = {
-backgroundColor: 'inherit',
-color: 'inherit'
+    backgroundColor: 'inherit',
+    color: 'inherit'
 }
   
 
