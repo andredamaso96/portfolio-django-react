@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from pyportfolio.models import About, Skills
+from pyportfolio.models import About, Skills, Experience
 
 class AboutSerializer(serializers.ModelSerializer):
     class Meta:
@@ -11,3 +11,9 @@ class SkillSerializer(serializers.ModelSerializer):
     class Meta:
         model = Skills
         fields = ('technology', 'value')
+
+class ExperienceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Experience
+        fields = ('job_title', 'company', 'start_date', 'end_date', 'jobs_duties', 'location', 'technologies')
+        

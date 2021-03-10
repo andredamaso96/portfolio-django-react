@@ -304,6 +304,9 @@ a:focus::before {
   padding: 20px;
 }
 
+.experience-block{
+  margin-bottom: 50px;
+}
 
 /* Education --------------------------- */
 

@@ -1,6 +1,8 @@
-from rest_framework.generics import ListAPIView, RetrieveAPIView
-from pyportfolio.models import About, Skills
-from .serializers import AboutSerializer, SkillSerializer
+from rest_framework import viewsets
+
+from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView
+from pyportfolio.models import About, Skills, Experience
+from .serializers import AboutSerializer, SkillSerializer, ExperienceSerializer
 
 
 class AboutListView(ListAPIView):
@@ -11,10 +13,16 @@ class AboutDetailView(RetrieveAPIView):
     queryset = About.objects.all()
     serializer_class = AboutSerializer
 
-class SkillListView(ListAPIView):
-    queryset = Skills.objects.all()
-    serializer_class = SkillSerializer
 
-class SkillDetailView(RetrieveAPIView):
-    queryset = Skills.objects.all()
+class SkillViewSet(viewsets.ModelViewSet):
     serializer_class = SkillSerializer
+    queryset = Skills.objects.all()
+
+
+class ExperienceListView(ListAPIView):
+    queryset = Experience.objects.all()
+    serializer_class = ExperienceSerializer
+
+class ExperienceDetailView(RetrieveAPIView):
+    queryset = Experience.objects.all()
+    serializer_class = ExperienceSerializer
