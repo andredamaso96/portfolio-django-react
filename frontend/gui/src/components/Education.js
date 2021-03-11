@@ -1,6 +1,23 @@
 import React, { Component } from 'react'
 
+const BASE_URL = "http://127.0.0.1:8000/api/educations/";
+
 export class Education extends Component {
+
+    state = {
+        educations: []
+    }
+
+    componentDidMount() {
+        fetch(BASE_URL)
+          .then(res => res.json())
+          .then(educations => {
+            this.setState({ educations })
+          });
+      }
+
+
+
     render() {
         return (
             <div>
@@ -15,15 +32,21 @@ export class Education extends Component {
                                         </div>
                                     </div>
                                     <div className="col-md-9">
-                                        {/* <div className="row item">
-                                            <div className="col-md-3"> */}
-                                                {/* <div key="{education.school}"> */}
+
+                                            {this.state.educations.reverse().map((education) => (
+                                            
+                                            <div className="experience-block">
+
                                                 <div>
-                                                    <h5>Licenciatura em Engenharia Informática</h5>
-                                                    <p className="info">IPBeja Escola Superior de Tecnologias e Gestão <span>&bull;</span><em className="date">2015/2020</em></p>
+                                                    <h5>{education.course}</h5>
+                                                    <p className="info">{education.school} <span>&bull;</span><em className="date"> {education.start_date} - { education.end_date === null ? "Currently" : education.end_date }</em></p>
                                                 </div>
-                                            {/* </div>
-                                        </div> */}
+                                            
+                                            </div>
+
+                                             )
+                                        )}
+                                      
                                     </div>
                                 </div>
                             </div>

@@ -18,8 +18,6 @@ export class Experience extends Component {
 
     render() {
 
-
-
         return (
             <div>
                 <section id="experience" className="about-mf sect-pt4 route">
@@ -35,16 +33,16 @@ export class Experience extends Component {
 
                                     <div className="col-md-9">
 
-                                    {this.state.experiences.map((experience, id) => (
+                                    {this.state.experiences.reverse().map((experience) => (
 
-                                    <div key={experience.id} className="experience-block">
+                                    <div className="experience-block">
                                         {/* <div className="row item">
                                             <div className="col-md-3"> */}
                                                 {/* <div key="{education.school}"> */}
 
                                                 <div>
                                                     <h5>{experience.job_title}</h5>
-                                                    <p className="info">{experience.company} <span>&bull;</span><em className="date"> {experience.start_date} - { experience.end_date === null ? "Currently" : experience.end_date }</em></p>
+                                                    <p className="info">{experience.company}, {experience.location} <span>&bull;</span><em className="date"> {experience.start_date} - { experience.end_date === null ? "Currently" : experience.end_date }</em></p>
                                                     <p><span>&bull;</span> {experience.jobs_duties}</p>
                                                     <p className="technologies"><strong>Technologies:</strong> {experience.technologies}</p>
                                                 </div>

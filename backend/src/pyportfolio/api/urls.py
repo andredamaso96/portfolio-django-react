@@ -5,7 +5,9 @@ from .views import (
         AboutDetailView,
         SkillViewSet,
         ExperienceListView,
-        ExperienceDetailView
+        ExperienceDetailView,
+        EducationListView,
+        EducationDetailView
     )
 
 # from pyportfolio.api.views import SkillViewSet
@@ -21,6 +23,8 @@ urlpatterns = [
     re_path('', include(router.urls)),
     path('experiences/', ExperienceListView.as_view()),
     path('experiences/<pk>', ExperienceDetailView.as_view()),
+    path('educations/', EducationListView.as_view()),
+    path('educations/<pk>', EducationDetailView.as_view()),
     # path('skills/', SkillListView.as_view()),
     # path('skills/<pk>', SkillDetailView.as_view()),
     # path('skills/create/', SkillCreateView.as_view()),
