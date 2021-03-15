@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
-import { Link } from 'react-scroll';
-import { RiMenu3Line } from 'react-icons/ri';
+import { Link } from 'react-scroll'
+import { RiMenu3Line } from 'react-icons/ri'
 
 export default class Navbar extends Component {
 
@@ -42,8 +42,7 @@ export default class Navbar extends Component {
                 
             }}>
                 <div className="container">
-                    
-                    
+                                       
                         <button
                             className="navbar-toggler"
                             type="button"

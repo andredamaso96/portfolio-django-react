@@ -167,7 +167,7 @@ export class Contact extends Component {
                             rows="3" />
                         <div className="error">{this.state.messageError}</div>
                         </Form.Group>
-                        <Button variant="primary" type="submit" value="Submit"> Send <FiSend /></Button>
+                        <Button variant="primary"> Send <FiSend /></Button>
                         </Form>
                         </div>                       
                     </div>

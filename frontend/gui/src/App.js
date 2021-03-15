@@ -9,6 +9,7 @@ import Experience from './components/Experience'
 import Education from './components/Education'
 import Projects from './components/Projects'
 import Contact from './components/Contact'
+import DetailProject from './components/DetailProject'
 
 import Layout from './hocs/Layout'
 
@@ -16,6 +17,7 @@ function App() {
   return (
     <Router>
       <Switch>
+      <Route exact path="/project/:id" component={DetailProject} />
         <Fragment>
           <Layout>
             <Route exact path='/' component={Jumbotron} />

@@ -33,9 +33,9 @@ export class Experience extends Component {
 
                                     <div className="col-md-9">
 
-                                    {this.state.experiences.reverse().map((experience) => (
+                                    {this.state.experiences.reverse().map((experience, id) => (
 
-                                    <div className="experience-block">
+                                    <div key={id} className="experience-block">
                                         {/* <div className="row item">
                                             <div className="col-md-3"> */}
                                                 {/* <div key="{education.school}"> */}

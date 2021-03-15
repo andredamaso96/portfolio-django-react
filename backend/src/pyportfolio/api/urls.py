@@ -7,14 +7,18 @@ from .views import (
         ExperienceListView,
         ExperienceDetailView,
         EducationListView,
-        EducationDetailView
+        EducationDetailView,
+        ProjectListView,
+        ProjectDetailView,
+        ContactCreateView,
+        ContactViewSet
     )
 
-# from pyportfolio.api.views import SkillViewSet
 from rest_framework.routers import DefaultRouter
 
 router = DefaultRouter()
 router.register(r'skills', SkillViewSet, basename='skills')
+router.register(r'contact', ContactViewSet, 'contact')
 #urlpatterns = router.urls
 
 urlpatterns = [
@@ -25,7 +29,8 @@ urlpatterns = [
     path('experiences/<pk>', ExperienceDetailView.as_view()),
     path('educations/', EducationListView.as_view()),
     path('educations/<pk>', EducationDetailView.as_view()),
-    # path('skills/', SkillListView.as_view()),
-    # path('skills/<pk>', SkillDetailView.as_view()),
-    # path('skills/create/', SkillCreateView.as_view()),
+    path('projects/', ProjectListView.as_view()),
+    path('projects/<pk>', ProjectDetailView.as_view()),
+    path('contact/', ContactCreateView.as_view()),
+
 ]

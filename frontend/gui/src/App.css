@@ -352,7 +352,11 @@ a:focus::before {
 }
 
 .card img {
-  width: 100%;
+  /* width: 100%; */
+  /* text-align: center; */
+  display:block;
+  margin:auto;
+  height: 250px;
   object-fit: cover;
 }
 
@@ -377,12 +381,29 @@ a:focus::before {
   padding: 1.2em;
 }
 
-.card a {
+.card a,
+.repository {
   color: grey;
 }
 
-.card a:hover{
+.card a:hover,
+.repository:hover{
   text-decoration: none;
+}
+
+#detail-project{
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+#detail-image{
+  max-height: 500px;
+  display:block;
+  margin:auto;
+}
+
+#detail-project a {
+  color: #00444d;
 }
 
 
@@ -394,6 +415,16 @@ a:focus::before {
   padding-left: 60px;
   padding-left: 60px;
 }
+
+.error {
+  color: red;
+}
+
+.success {
+  color: green;
+  padding: 5px;
+}
+
 
 /* Footer --------------------------------------- */
 

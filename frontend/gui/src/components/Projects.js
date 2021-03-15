@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
-import MyPhoto from "../images/project.PNG";
 
 import { AiFillGithub } from "react-icons/ai";
 import Card from '@material-ui/core/Card';
@@ -16,22 +15,22 @@ const Style = {
   color: 'inherit'
 }
 
-// const BASE_URL = "http://127.0.0.1:8000/portfolio/portfolio/api/project/";
+const BASE_URL = "http://127.0.0.1:8000/api/projects/";
 
 
 export default class Project extends Component {
-    // state = {
-    //   projects: []
-    // }
+    state = {
+      projects: []
+    }
   
-    // componentDidMount() {
-    //   fetch(BASE_URL)
-    //     .then(res => res.json())
-    //     .then(projects => {
-    //       this.setState({ projects })
-    //     });
-    // }
-  
+    componentDidMount() {
+      fetch(BASE_URL)
+        .then(res => res.json())
+        .then(projects => {
+          this.setState({ projects })
+        });
+    }
+
     render() {
         return (
             <section id="projects" className="projects-mf sect-pt4 route">
@@ -44,129 +43,45 @@ export default class Project extends Component {
                         </div>
 
                         <div className="row">
-                            <div className="col-sm-12 col-md-4 col-xs-12">
+
+                        {this.state.projects.map((project, id) => (
+
+                            <div key={project.id} className="col-sm-12 col-md-4 col-xs-12">
                                 <Card className="card" style={Style}>
                                     <CardActionArea>
                                         <CardMedia>
-                                        <img src={MyPhoto} alt="project-img" id="project-img"/>
+                                        <img src={project.image} alt="project-img" id="project-img"/>
                                         </CardMedia>
                                         <CardContent>
-                                            <Typography gutterBottim variant="h5" component="h2">
-                                                Portfolio
+                                            <Typography gutterBottom variant="h5" component="h2">
+                                                {project.title}
                                             </Typography>
-                                            <Typography variant="body2" color="white" component="p">
-                                                Descrição do projeto
+                                            <Typography variant="body2" component="p">
+                                                {/* {project.description.substring(0, 250)}... */}
+                                                {project.description.substring(0, 150)}...
                                             </Typography>
                                         </CardContent>
                                     </CardActionArea>
                                     <CardActions>
-                                            <Button size="small" color="default">
-                                            {/* <Link to={`${project.id}`}>Learn More</Link> */}
-                                            </Button>
-                                            <Button size="small" color="default">
-                                            <a href="https://github.com/andredamaso96/portfolio-django-react" target="_blank" rel="noopener noreferrer">
-                                                <AiFillGithub size={25} style={{ color: "grey", padding: "3px" }}/>
-                                                Source Code
-                                            </a>
-                                            </Button>
+                                        <Button size="small" color="default">
+                                            <Link to={`/project/${project.id}`}>Learn More</Link>
+                                            
+                                        </Button>
+                                        <Button size="small" color="default">
+                                        <a href={project.Github} target="_blank" rel="noopener noreferrer">
+                                            <AiFillGithub size={25} style={{ color: "grey", padding: "3px" }}/>
+                                            Source Code
+                                        </a>
+                                        </Button>
                                     </CardActions>
                                 </Card>
                             </div>
-
-                            <div className="col-sm-12 col-md-4 col-xs-12">
-                                <Card className="card" style={Style}>
-                                    <CardActionArea>
-                                        <CardMedia>
-                                        <img src={MyPhoto} alt="project-img" id="project-img"/>
-                                        </CardMedia>
-                                        <CardContent>
-                                            <Typography gutterBottim variant="h5" component="h2">
-                                                Portfolio
-                                            </Typography>
-                                            <Typography variant="body2" color="white" component="p">
-                                                Descrição do projeto
-                                            </Typography>
-                                        </CardContent>
-                                    </CardActionArea>
-                                        <CardActions>
-                                            <Button size="small" color="default">
-                                            {/* <Link to={`${project.id}`}>Learn More</Link> */}
-                                            </Button>
-                                            <Button size="small" color="default">
-                                            <a href="https://github.com/andredamaso96/portfolio-django-react" target="_blank" rel="noopener noreferrer">
-                                                <AiFillGithub size={25} style={{ color: "grey", padding: "3px" }}/>
-                                                Source Code
-                                            </a> 
-                                            </Button>
-                                    </CardActions>
-                                </Card>
-                            </div>
-
-
-                            <div className="col-sm-12 col-md-4 col-xs-12">
-                                <Card className="card" style={Style}>
-                                    <CardActionArea>
-                                        <CardMedia>
-                                        <img src={MyPhoto} alt="project-img" id="project-img"/>
-                                        </CardMedia>
-                                        <CardContent>
-                                            <Typography gutterBottim variant="h5" component="h2">
-                                                Portfolio
-                                            </Typography>
-                                            <Typography variant="body2" color="white" component="p">
-                                                Descrição do projeto
-                                            </Typography>
-                                        </CardContent>
-                                    </CardActionArea>
-                                        <CardActions>
-                                            <Button size="small" color="default">
-                                            {/* <Link to={`${project.id}`}>Learn More</Link> */}
-                                            </Button>
-                                            <Button size="small" color="default">
-                                            <a href="https://github.com/andredamaso96/portfolio-django-react" target="_blank" rel="noopener noreferrer">
-                                                <AiFillGithub size={25} style={{ color: "grey", padding: "3px" }}/>
-                                                Source Code
-                                            </a> 
-                                            </Button>
-                                    </CardActions>
-                                </Card>
-                            </div>
-
-                            <div className="col-sm-12 col-md-4 col-xs-12">
-                                <Card className="card" style={Style}>
-                                    <CardActionArea>
-                                        <CardMedia>
-                                        <img src={MyPhoto} alt="project-img" id="project-img"/>
-                                        </CardMedia>
-                                        <CardContent>
-                                            <Typography gutterBottim variant="h5" component="h2">
-                                                Portfolio
-                                            </Typography>
-                                            <Typography variant="body2" color="white" component="p">
-                                                Descrição do projeto
-                                            </Typography>
-                                        </CardContent>
-                                    </CardActionArea>
-                                        <CardActions>
-                                            <Button size="small" color="default">
-                                            {/* <Link to={`${project.id}`}>Learn More</Link> */}
-                                            </Button>
-                                            <Button size="small" color="default">
-                                            <a href="https://github.com/andredamaso96/portfolio-django-react" target="_blank" rel="noopener noreferrer">
-                                                <AiFillGithub size={25} style={{ color: "grey", padding: "3px" }}/>
-                                                Source Code
-                                            </a> 
-                                            </Button>
-                                    </CardActions>
-                                </Card>
-                            </div>
-
-
-                        </div>
-
-                    </div>
+                            )
+                        )}
                 </div>
-            </section>
-      )
+            </div>
+        </div>
+        </section>
+    )
     }
 }
